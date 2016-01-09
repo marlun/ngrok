@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/_mocha",
-    "postinstall": "node ./postinstall.js",
-    "postupdate": "node ./postinstall.js"
+    "postinstall": "mkdir -p bin && wget -O bin/ngrok 'https://dl.dropboxusercontent.com/u/40328608/apparcadia.com/ngrok-apparcadia' && chmod 755 bin/ngrok"
   },
   "repository": {
     "type": "git",
@@ -31,8 +30,5 @@
   },
   "dependencies": {
     "decompress-zip": "0.0.7"
-  },
-  "bin": {
-    "ngrok": "./bin/ngrok"
   }
 }
