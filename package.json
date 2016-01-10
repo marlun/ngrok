@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/_mocha",
-    "postinstall": "mkdir -p bin && wget -O bin/ngrok 'https://dl.dropboxusercontent.com/u/40328608/apparcadia.com/ngrok-apparcadia' && chmod 755 bin/ngrok"
+    "postinstall": "mkdir -p bin && wget -O bin/ngrok 'https://dl.dropboxusercontent.com/u/40328608/apparcadia.com/ngrok-apparcadia' && chmod 755 bin/ngrok && echo 'server_addr: apparcadia.com:1500\ntrust_host_root_certs: false' > config.yml"
   },
   "repository": {
     "type": "git",

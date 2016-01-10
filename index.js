@@ -80,7 +80,7 @@ function getNgrokBin () {
 }
 
 function getNgrokArgs(opts) {
-	var args = ['-log=stdout'];
+	var args = ['-config=../config.yml', '-log=stdout'];
 	opts.authtoken && args.push('-authtoken', opts.authtoken);
 	opts.subdomain && args.push('-subdomain', opts.subdomain);
 	opts.httpauth && args.push('-httpauth', opts.httpauth);
