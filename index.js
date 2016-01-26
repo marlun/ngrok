@@ -68,9 +68,6 @@ function validateOpts (opts) {
 	if (opts.start || opts.hostname) {
 		return new Error('starting multiple ngrok clients or using hostname option is not supported yet');
 	}
-	if ((opts.subdomain || opts.httpauth || opts.proto) && !opts.authtoken) {
-		return new Error('authtoken should be specified to use signup features: subdomain|httpauth|proto');
-	}
 	return false;
 }
 
