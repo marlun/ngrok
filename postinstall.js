@@ -3,7 +3,7 @@ console.error('ngrok - downloading newest binary...');
 var os = require('os');
 var fs = require('fs');
 var util = require('util');
-var https = require('https');
+var http = require('http');
 var DecompressZip = require('decompress-zip');
 
 var source = 'http://dl.ngrok.com/ngrok_2.0.19_';
@@ -25,7 +25,7 @@ if (!fs.existsSync(path)) {
 }
 
 var which = os.platform() + os.arch();
-https.get(files[which], function(resp) {
+http.get(files[which], function(resp) {
 	var zip = fs.createWriteStream(path + 'ngrok.zip');
 	resp.pipe(zip)
 		.on('finish', function() {
